@@ -1,0 +1,54 @@
+[Javascript - 생활코딩]
+
+- Javascript는 HTML 제어 - CSS를 부여
+  * <head>에 <script src="color.js"></script> 로 연동!
+  
+- Javascript는 HTML 위에서 동작
+  1) <script> tag로 작성
+    * HTML 1+1은 그대로(정적) / JS document.write(1+1);는 2로 출력(동적)
+    * document.write('hi'); : 문구 출력
+  2) <HTML> 속성 부여
+    * 다양한 event에서 JS attribute 작성 : onclick, onchange, onkeydown 등
+    * alert('hi'); : 알람창
+  3) console 활용
+    * 현재 웹페이지 대상으로 동작
+
+- document.querySelector('~'). ; : JS 적용 기본문법
+
+- Data Type
+  1) number: 숫자, 1,2 & +,-,*,/ 연산자 적요됨
+  2) string: 문자열("~", '~')
+    * .length : 글자수
+    * .toUpperCase() : 대문자
+    * .indexOf('o') : 글자위치
+    * .trim : 공백삭제
+  3) var: 변수 -> let, const
+    * x(variable) =(대입 연산자) 1(값)
+  4) boolean : true/false
+    * 비교 연산자(===, <, >) / HTML에선 &lt;(<), &rt;(>)
+    * this : 현재 태그 선택 -> #id, .class 불필요
+
+- 배열(array)과 반복문(loop)
+  배열[] : var alphabet = ['A','B','C'] <list>
+  * a.push('D'); : 추가
+  * a.length : 배열 길이
+  반복문
+  * 기본적으로 let i = 0; 지정
+  * while(i<3){~; i=i+1;}; : 3회 반복문
+
+- 함수 : 유지보수의 효율성 극대화
+  * function nightdayselector(self) {~}
+
+- 객체(object) : 같은 성질의 함수와 변수를 리팩토링(순서없음)
+  객체{} : var alphabet = {'1':'A', '2':'B', '3':'C'} <dictionary>
+  1,2,3 : key(접근어), A,B,C : object(객체)
+  * document.write(alphabet.1); : 출력
+  * alphabet.4 = 'D'; : 추가
+  * alphabet['last word'] = 'Z' : 추가(접근어에 띄어쓰기)
+  * 반복문 출력 : for(var key in coworkers) {coworkers[key]}
+
+- 객체와 함수 : 객체에 소속된 함수(Method), 소속된 변수(Property)
+  1) function showAll() = {~}
+  2) alphabet.showAll() = function() {~}
+  3) var showAll() = function() {~}
+  

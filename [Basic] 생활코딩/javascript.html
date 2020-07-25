@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+    <title> WEB1 - JavaScript</title>
+    <meta charset='utr-8'>
+    <script>
+        function nightdayHandler() {
+            var alist=document.querySelectorAll('a');
+            var i = 0;
+            if(document.querySelector('#btn').value === 'night') {
+                document.querySelector('body').style.backgroundColor='black';
+                document.querySelector('body').style.color='white';
+                document.querySelector('#btn').value='day';
+                while(i<alist.length) {
+                    alist[i].style.color = 'yellow';
+                    i = i + 1;
+                }}
+            else {
+                document.querySelector('body').style.backgroundColor='white';
+                document.querySelector('body').style.color='black';
+                document.querySelector('#btn').value='night';
+                var alist=document.querySelectorAll('a');
+                var i = 0;
+                while(i<alist.length) {
+                    alist[i].style.color = 'blue';
+                    i = i + 1;
+                }}
+        }
+    </script>
+</head>
+<body>
+    <h1><a href="index.html" target="_blank">WEB</a></h1>
+    <input type="button" value="night" onclick="
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';">
+    <input type="button" value="day" onclick="
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black';">
+    <input id="btn" type="button" value="night" onclick="nightdayHandler();">
+    <ol>
+        <li><a href="1.html">HTML</a></li>
+        <li><a href="2.html">CSS</a></li>
+        <li><a href="3.html">JavaScript</a></li>
+    </ol>
+    <h2>JS이란 무엇인가?</h2>
+    <p>JavaScript (/ˈdʒɑːvəˌskrɪpt/),[6] often abbreviated as JS, is a programming language that conforms to the ECMAScript specification.[7] JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.</p>
+
+    <script>
+        document.write('1<br>');
+        if(false){
+        document.write('2<br>');}
+        else {
+        document.write('3<br>');}
+        document.write('4<br>');
+    </script>
+
+    <!-- button 리펙토링(#btn은 this, body는 target 변수 선택) -->
+    <input type="button" value="night" onclick="
+        let target = document.querySelector('body'); 
+        if(this.value === 'night') {
+            target.style.backgroundColor='black';
+            target.style.color='white';
+            this.value='day'}
+        else {
+            target.style.backgroundColor='white';
+            target.style.color='black';
+            this.value='night'}
+    ">
+
+    <!-- 배열과 반복문 -->
+    <h3>Array</h3>
+    <script> 
+        let coworkers = ['egoing', 'leezche'];
+        coworkers.push('taeng'); 
+        document.write(coworkers); 
+    </script>
+    <br>
+    <h3>Loop</h3>
+    <script> 
+        document.write('<li>1</li>');
+        var i = 0;
+        while(i < 3) {
+        document.write('<li>2</li>'); 
+        document.write('<li>3</li>');
+        i = i + 1;}
+        document.write('<li>4</li>');    
+    </script>
+    <br>
+    <h3>Loop + Array</h3>
+    <h4>1. ul, li</h4>
+    <ul>
+        <li>Fried</li>
+        <li>Yangnyum</li>
+        <li>Garlic</li>
+        <li>Frinkle</li>
+    </ul>
+    <h4>2. array</h4>
+    <script> var l = ['Fried', 'Yangnyum', 'Garlic', 'Frinkle'];
+    l.push('wasabimayo');</script>
+    <script>
+        var i = 0;
+        while(i<l.length){
+            document.write('<li>'+l[i]+'</li>'); 
+            i=i+1;}
+    </script>
+    <!-- 객체와 메서드 -->
+    <h2>Object & Method</h2>
+    <input type="button" value="night" id="btnn" onclick="night_day();">
+    <script>
+        var Body = {
+            setColor : function(c) {
+                document.querySelector('body').style.color = c;
+            },
+            setBgColor : function(c) {
+                document.querySelector('body').style.backgroundColor = c;
+            }
+        }
+        var Links = document.querySelectorAll('a');
+        function night_day(self) {
+            var target = document.querySelector('body');
+            if(self.value === 'night') {
+                Body.setBgColor('black');
+                Body.setColor('white');
+                self.value = 'day';
+                Links.color = 'powderblue'
+                }
+            else {
+                Body.setBgColor('white');
+                Body.setColor('black');
+                self.value = 'night';
+                Links.color = 'blue'
+            }
+        }
+    </script>
+</body>
+</html>
