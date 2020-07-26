@@ -1,0 +1,28 @@
+[Javascript]
+
+- API : 웹 브라우저에서 적용되는 함수
+
+- console.log('Hello World'); : 기본 출력 API
+- alert('Hello'); : 상단 팝업메세지 출력 API
+- script 선언방법
+  1) <head> 에 <script src="main.js></script> : HTML파싱 - 정지 후 script 다운/실행 - HTML파싱완료(JS용량 클수록 delay)
+  2) <body> 하단 <script src="main.js></script> : HTML파싱완료 - script 다운/실행(JS의 서버Data 수신, DOM 꾸며주는 효과 delay)
+  3) <head> 에 <script asyn src="main.js></script> : HTML파싱 + script다운 - 정지 후 script실행 - HTML파싱완료(여전히 delay)
+  4) <head> 에 <script defer src="main.js></script> : HTML파싱완료 + script다운 - script실행 (가장 안정적임!)
+
+- 순수 vanili JS 작성시, 최상단 'use strict'; 선언!(strict mode)
+  . 유동적 언어로 strict 부여
+  . a=6; error → let a; 정상화
+
+- Dynamic Typing으로 인해, 변수 type 바뀜 → Typescript 등장!
+  * Typescript(BABEL)는 Javascript에 Type이 올라감
+
+- Immutable data types : primitive types, frozen objects(object.freeze()) → safety, reduce mistakes
+- Mutable data types : objects
+
+- string concatenation
+  * \'로 인식, \t은 탭, \n은 줄바꿈
+
+- ||(or), &&(and) 배치시, 간단한 변수를 앞으로! 복잡한 함수는 뒤로!
+
+- break : loop를 끝냄 / continue : 계속 진행
