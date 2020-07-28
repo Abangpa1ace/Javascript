@@ -1,0 +1,96 @@
+[Javascript]
+
+- API : 웹 브라우저에서 적용되는 함수
+
+- console.log('Hello World'); : 기본 출력 API
+- alert('Hello'); : 상단 팝업메세지 출력 API
+- script 선언방법
+  1) <head> 에 <script src="main.js></script> : HTML파싱 - 정지 후 script 다운/실행 - HTML파싱완료(JS용량 클수록 delay)
+  2) <body> 하단 <script src="main.js></script> : HTML파싱완료 - script 다운/실행(JS의 서버Data 수신, DOM 꾸며주는 효과 delay)
+  3) <head> 에 <script asyn src="main.js></script> : HTML파싱 + script다운 - 정지 후 script실행 - HTML파싱완료(여전히 delay)
+  4) <head> 에 <script defer src="main.js></script> : HTML파싱완료 + script다운 - script실행 (가장 안정적임!)
+
+- 순수 vanili JS 작성시, 최상단 'use strict'; 선언!(strict mode)
+  . 유동적 언어로 strict 부여
+  . a=6; error → let a; 정상화
+
+- Dynamic Typing으로 인해, 변수 type 바뀜 → Typescript 등장!
+  * Typescript(BABEL)는 Javascript에 Type이 올라감
+
+
+
+[Data types]
+- Immutable data types : primitive types, frozen objects(object.freeze()) → safety, reduce mistakes
+- Mutable data types : objects
+
+- string concatenation
+  * \'로 인식, \t은 탭, \n은 줄바꿈
+
+- ||(or), &&(and) 배치시, 간단한 변수를 앞으로! 복잡한 함수는 뒤로!
+
+- break : loop를 끝냄 / continue : 계속 진행
+
+
+
+[Function(함수)] a.k.a sub-programming
+
+  1) fundamental building block in the program
+  2) subprogram can be used multiple times
+  3) performs a task or calculates a value
+  * Function은 object의 일종(.length 등)
+
+- Function은 declaration 전에 작동해도 호출됨! -> Hoisting(JS는 선언된 구문을 맨위로 올림)
+
+- 명명법
+  * 변수 : 명사형 (name, age, color...)
+  * 함수 : 동사+명사 (doSomething, createCard)
+
+- 함수 종류
+  * anonymous Function : function() { 실행내용 }
+  * named Function : function doSomething() { 실행내용 }
+    -> 디버깅에 유리함, but 함수 중복시 recursion 발생(에러)
+
+- ES6에 추가된 함수 Parameter
+  * Default Parameter : 기본은 Undefined
+  * Rest Parameter : (...para) 배열화
+
+- Local Scope : 반투명 유리창과 같은 성질
+  * 외부에서는 내부변수 사용/제어 불가, 내부에서는 외부변수 사용/제어 가능
+  * global 변수를 적용
+
+- Early return : 조건에 맞지 않는 경우 미리 return
+  * if(x<커트라인) {return;} else{정상로직}
+
+
+
+[Class & Object] : ES6에 추가! (이전엔 'template function'으로 Object)
+
+- Class : Data 없음, template만 존재
+- Object : instance of Class, Data를 Class에 인입
+
+- Getter & Setter : User의 실수를 방어
+
+get age() {
+    return this._age    <- age값을 _age에 할당
+}
+
+set age(value) {        <- value 필수(추출내용)
+    this._age < 0 ? 0 : value;      <-age가 음수면 0, 아니면 value 추출
+}
+
+- Public, Private Fields
+  * Link : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+  * class 내 public field는 외부접근 가능, private field는 접근 불가
+
+- Static properties or methods
+  * class 공통사항을 static 변수 = '값' 지정 -> object에 미할당, class 할당됨!
+
+- 상속 & 다양성 ***(객체지향 중요)
+  * 상속 : class A extends B{}; 로 A에 B클래스 성질을 가져옴
+  * 다양성 : 중괄호 안 Overwriting 하여 성질 변화 (기존성질 가져오려면 super.성질())
+
+- Control or Command 키로 클릭하면 정의가 나옴!
+
+
+
+[]
