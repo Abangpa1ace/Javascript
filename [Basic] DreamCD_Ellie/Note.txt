@@ -93,4 +93,29 @@ set age(value) {        <- value 필수(추출내용)
 
 
 
-[]
+[Object] : JS Data type의 한 종류(객체 지향!)
+
+- object = { key : value };
+
+- Computed properties
+  1) taeng.name
+  2) taeng['name'] → Key의 value를 받는 함수 등에서 유용함
+
+- Shorthand
+  * function makePerson(name, age) {return {name, age,}}
+  * Class 이전 object 생성방식(함수명은 1단어, this.로 operator 지정)
+
+- Constructor function : Class 이전 object 생성 templates
+  * function Person(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+
+- in operator : object 내 operator 유무 검사
+
+- for..in : for (key in object) - 키 출력
+  for..of : for (value of iterable) - 값 출력
+
+- Object Cloning : 복제
+  * const user2 = Object.assigh({}, user1, ...);
+    → 뒷 값의 properties가 기존 내용을 덮어씀!
