@@ -1,0 +1,39 @@
+[Callback] : 비동기 프로그램
+
+- Javascript는 동기적(synchronous) : hoisting 이후 순차적 코드실행
+- sync vs async : 코드가 순서대로 vs 언제 실행될지 모름
+  * async 예시 : setTimeout(function, 시간값) : 일정시간 지난 뒤 fucntion 실행 - 콜백함수
+- callback 함수 : 특정시기에 함수를 호출
+  * Synchronous callback : 바로 호출
+  * Asynchronous callback : delay 호출
+  * 비동기 방법은 여러가지 : lambda, function pointer 등 -> JS는 setTimeout으로!
+
+
+
+[Promise] : JS 제공, 비동기 간편화시키는 Object (ex) 사전예약 시스템 등)
+
+  1) Producer : 네트워킹, 파일읽기 등 시간 걸리는 일을 비동기적으로 처리
+    * const promise = new Promise(resolve, reject) => {setTimeout(() = resolve(정상)>)}
+    * reject는 new Error object와 사용
+
+  2) Consumer : 데이터 받아온 뒤 동작 - then, catch, finally
+    * then : 정상호출 - promise.then((val) => console.log(val)) / Producer의 resolve 받아옴
+    * catch : 에러호출 - promise.catch((err) => console.log(err)) / Producer의 reject 받아옴
+    * finally : 무조건 마지막에 호출 - promise.finally(()=>console.log('Finish!'))
+    * 위 API들은 여러번 사용가능(Promise Chaining)
+
+- Promise Chaining의 Error Handling
+  * Error 발생방지 위해 catch 작성
+
+
+
+[async, await] : Promise 위에서 간결하고, 연동적으로, 동기적이게끔 만들어주는 API(syntactic sugar: Class등)
+
+  - async : resolve, reject를 생략할 수 있게 해줌
+    * async function fetchUser() {~}; : function 앞에 async 붙임
+
+  - await : async 함수에서만 사용 가능
+
+  - Promise API
+    * Promise.all([배열]) : 모든 delay를 병렬적으로 배열로 업로드함
+    * Promise.race([배열]) : 모든 delay 중 처음으로 호출되는 요소 출력
