@@ -1,0 +1,14 @@
+[Clone] Reactive Website: Webstoryboy(Youtube)
+
+1. Semantic Tag
+  - div.header, nav, aside, footer 등을 태그로 명명(<header>)
+
+2. Media Query
+  - 기본구조 : @media only all (조건문) {실행문}
+    1) @media : 미디어쿼리 시작
+    2) only : 미디어쿼리 해석 명령(생략가능)
+    3) all : 미디어쿼리 해석 대상(생략가능) - all, print, screen, aural, tv...
+    4) (조건문) : 미디어쿼리 실행조건(max-width:1000px;) → min,max를 둘다 설정하기도 함.
+    5) {실행문} : 미디어쿼리 실행내용{body{background:#111}}
+
+3. Reactive Site Layout
