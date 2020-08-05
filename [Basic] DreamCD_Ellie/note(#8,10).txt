@@ -1,0 +1,44 @@
+[Array] : 배열(모든 프로젝트에서 활용되는 자료 형태)
+
+- 뒤에서 입력, 추출 : push, pop
+- 앞에서 입력, 추출 : unshift, shift
+  * push, pop에 비해 매우 느림 - 데이터를 한칸씩 옮겨야하므로
+- 중간부분 제거 : splice(x,y,z,..) -> x 인덱스부터 y개 삭제, 해당 위치에 z가 들어감
+- 두 배열을 연결 : array1.concat(array2);
+
+- Searching
+  * array.indexOf('data'); -> 인덱스를 추출(없을시 -1)
+  * array.lastIndexOf('data'); -> 인덱스를 뒤에서부터 추출
+  * array.includes('data); -> 포함여부 추출(boolean)
+  
+
+
+[JSON]
+
+- HTTP : Client와 Server의 통신규약
+- AJAX(Asynchronous Javascript And XML)
+  : 웹페이지에서 동적으로 서버의 데이터를 받아올 수 있는 환경
+  * XHR(XMLHttpRequest) : 웹브라우저 제공 Object. 이를 통해 서버에서 동적으로 데이터 response 가능 ex) fetch() API
+  * XML : HTML과 같은 마크업 language -> text가 많아져서 가독성 하락!(JSON 전환)
+
+- JSON(Javascript Object Notation) : JS의 Object를 차용. Web + Moblie 활용가능.
+  * 브라우저(Object) -- 서버(String) : serialize / deserialize(직렬화)
+  * stringify : to JSON
+  * parse : to Object
+
+- stringify : Object를 JSON(string)으로 - write
+  * 함수, symbol은 JSON에 포함되지 않음
+  * json = JSON.stringify(rabbit, ['name']); : replacer 통해서 특정요소만 JSON화
+  * 콜백함수(통제): json = JSON.stringify(rabbit, (key, value) => return key === 'name' ? 'ellie' : value)
+
+- parse : JSON(string)을 Object로 - read
+  * object 값이 string화 되기 때문에, 함수가 적용 안됨
+  * 콜백함수(통제): obj = JSON.parse(json, (key, value) => return key === 'birthDate' ? new Date(value) : value)
+
+- JSON Diff : JSON 변환값 비교
+- JSON Beautifier : JSON 포멧 수정
+- JSON Parser : JSON이 object 표현형식 확인
+- JSON Validator : JSON 유효여부 확인(valid)
+
+
+
