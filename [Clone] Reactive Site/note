@@ -12,3 +12,8 @@
     5) {실행문} : 미디어쿼리 실행내용{body{background:#111}}
 
 3. Reactive Site Layout
+  * CSS Layout 잡을땐 width, height 설정부터
+  
+  - 반응형 레이아웃 만들기
+    1) #wrap에 width 부여, 하위태그는 %로 제어
+    2) @media max-width:1200px 시, 기준보다 10~20px 크게 -> 순간 스크롤바 안생김
