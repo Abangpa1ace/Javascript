@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        * {padding: 0; margin: 0;}
+        body{background: #cccccc;}
+        #wrap {width: 100%;}
+        header {width:100%; height: 150px; background: #81c784;}
+        aside {float: left;width: 30%; height: 700px; background: #66bb6a;}
+        section{float:left; width: 40%; height: 700px; background: #4caf50;}
+        article {float: left;width: 30%; height: 700px; background: #43a047;}
+        footer {clear:both; width: 100%; height: 150px; background: #388e3c;}
+
+        /* width: ~1200px 모니터 */
+        @media(max-width: 1220px) {
+
+            article {float: none;
+            clear: both;
+            width: 100%;
+            height: 300px;}
+        }
+
+        /* width: ~768px 노트북 */
+        @media(max-width: 768px) {
+            aside {width: 100%; height: 300px;}
+            section {width: 100%; height: 500px;}
+        }
+
+        /* width: ~480px 모바일 */
+        @media(max-width: 480px) {
+            header{height: 300px;}
+            footer{height: 300px;}
+        }
+    </style>
+    <title>layout4</title>
+  </head>
+  <body>
+      <div id="wrap">
+          <header></header>
+          <aside></aside>
+          <section></section>
+          <article></article>
+          <footer></footer>
+      </div>
+  </body>
+</html>
