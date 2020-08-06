@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background: #ccc;
+      }
+      #wrap {
+        width: 1200px;
+        margin: 0 auto;
+      }
+      header {
+        width: 100%;
+        height: 100px;
+        background: #f5e79b;
+      }
+      nav {
+        width: 100%;
+        height: 300px;
+        background: #ecb640;
+      }
+      section {
+        overflow: hidden;
+        width: 100%;
+        background: #f8903a;
+        padding: 50px 50px;
+        box-sizing: border-box;
+      }
+      section div.box {
+        float: left;
+        background: #3d93da;
+        width: 18%;
+        margin: 1%;
+        height: 170px;
+        border-radius: 20px;
+      }
+      footer {
+        width: 100%;
+        height: 100px;
+        background: #e6651a;
+      }
+
+      /* ~1200px */
+      @media (max-width: 1240px) {
+        #wrap {
+          width: 100%;
+        }
+        section div.box {
+          width: 23%;
+        }
+        section div.box:nth-child(5n) {
+          /* 5의 배수개수 요소 없앰 */
+          display: none;
+        }
+      }
+
+      /* ~768px */
+      @media (max-width: 768px) {
+        section div.box {
+          width: 31.3333%;
+        }
+        section div.box:nth-child(5) {
+          display: block;
+        }
+
+        /* ~480px */
+        @media (max-width: 480px) {
+          section div.box {
+            width: 48%;
+          }
+          section div.box:nth-child(10) {
+            display: block;
+          }
+        }
+      }
+    </style>
+    <title>layout6</title>
+  </head>
+  <body>
+    <div id="wrap">
+      <header></header>
+      <nav></nav>
+      <section>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </section>
+      <footer></footer>
+    </div>
+  </body>
+</html>
