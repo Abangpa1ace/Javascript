@@ -1,0 +1,26 @@
+[Site Clone Coding]
+
+- 유용한 사이트(Remind!) : Google Fonts, Font Awesome(icon)
+
+- 두가지 성질 동시구현
+  * box-shadow: inset -9em 0 0 0 #ccc, inset 9em 0 0 0 #ccc;
+
+- box-shadow : 테두리를 감싼 그림자 효과
+  * { <offset-X> <offset-Y> <blur-radius> <spread-radius> }, inset(안쪽으로), color(색깔)
+- 리스트 가로정렬 : a태크 block 성질로 링크구현
+  * li{display: inline;} > a{display: inline-block;}
+
+- 박스 비대칭 태두리
+  * border-radius : 6px 0;
+
+- 박스 밑에 화살표
+  li a span::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -5px;
+      border-top: 5px solid #000; *
+      border-left: 5px solid transparent; *
+      border-right: 5px solid transparent; *
+      margin-left: -5px;
+  }
