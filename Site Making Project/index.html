@@ -85,35 +85,114 @@
             </div>
         </div>
     </header>
-    <nav>
-        <h2>반응형 사이트 전체 메뉴</h2>
+    <nav id="nav">
+        <div class="container">
+            <div class="nav">
+            <h2>반응형 사이트 전체 메뉴</h2>
+            <div>
+                <h3>HTML Reference</h3>
+                <ol>
+                    <li><a href="#">HTML 태그(Tag)</a></li>
+                    <li><a href="#">블록 요소/인라인 요소</a></li>
+                    <li><a href="#">DTD 선언</a></li>
+                    <li><a href="#">언어 속성 설정</a></li>
+                    <li><a href="#">HTML &lt;title&gt;</a></li>
+                    <li><a href="#">HTML &lt;meta&gt;</a></li>
+                    <li><a href="#">특수문자</a></li>
+                    <li><a href="#">하이퍼 링크</a></li>
+                    <li><a href="#">HTML style</a></li>
+                    <li><a href="#">HTML html</a></li>
+                    <li><a href="#">HTML head</a></li>
+                    <li><a href="#">HTML div</a></li>
+                    <li><a href="#">HTML colgroup</a></li>
+                    <li><a href="#">HTML caption</a></li>
+                </ol>
+            </div>
+                <div>
+                    <h3>CSS  Reference</h3>
+                    <ol>
+                        <li><a href="#">CSS 선택자</a></li>
+                        <li><a href="#">CSS 단위</a></li>
+                        <li><a href="#">CSS 색상</a></li>
+                        <li><a href="#">CSS 선언 방법</a></li>
+                        <li><a href="#">상대주소와 절대주소</a></li>
+                        <li><a href="#">CSS float</a></li>
+                        <li><a href="#">이미지 표현 방법</a></li>
+                        <li><a href="#">이미지 스프라이트</a></li>
+                        <li><a href="#">IR 효과</a></li>
+                        <li><a href="#">이미지 최적화</a></li>
+                        <li><a href="#">background-color</a></li>
+                        <li><a href="#">border-style</a></li>
+                        <li><a href="#">font-size</a></li>
+                        <li><a href="#">text-align</a></li>
+                    </ol>
+                </div>
+                <div class="last">
+                    <h3>Webstandard</h3>
+                    <ol>
+                        <li><a href="#">웹 표준</a></li>
+                        <li><a href="#">웹 접근성</a></li>
+                        <li><a href="#">W3C</a></li>
+                        <li><a href="#">웹 접근성 연구소</a></li>
+                        <li><a href="#">네이버 널리</a></li>
+                        <li><a href="#">다음 다룸</a></li>
+                        <li><a href="#">Webstandard</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
     </nav>
-    <article>
-        <h2>반응형 사이트 서브타이틀</h2>
-    </article>
+    <section id="sub-title">
+        <div class="container">
+            <h2>반응형 사이트 서브타이틀</h2>
+            <div class="sub-title">
+                <p>"나는 퍼블리셔다!</p>
+                <a href="#" class="btn"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </section>
     <main>
-        <h2>반응형 사이트 컨텐츠</h2>
-        <section>
-            <h3>반응형 사이트 왼쪽</h3>
-            <article><h4>왼쪽 컨텐츠1</h4></article>
-            <article><h4>왼쪽 컨텐츠2</h4></article>
-            <article><h4>왼쪽 컨텐츠3</h4></article>
-        </section>
-        <section>
-            <h3>반응형 사이트 중앙</h3>
-            <article><h4>중앙 컨텐츠1</h4></article>
-            <article><h4>중앙 컨텐츠2</h4></article>
-            <article><h4>중앙 컨텐츠3</h4></article>
-        </section>
-        <section>
-            <h3>반응형 사이트 오른쪽</h3>
-            <article><h4>오른쪽 컨텐츠1</h4></article>
-            <article><h4>오른쪽 컨텐츠2</h4></article>
-            <article><h4>오른쪽 컨텐츠3</h4></article>
+        <section id="contents">
+            <div class="container">
+                <h2>반응형 사이트 컨텐츠</h2>
+                <section class="cont-left">
+                    <h3>반응형 사이트 왼쪽</h3>
+                    <article class="column col-left1">
+                        <h4>Menu</h4>
+                        <p>Box-Shadow를 이용한 마우스 오버효과 메뉴입니다.</p>
+                        <ul class="menu">
+                            <li><a href="#">Cafe <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></i></li>
+                            <li><a href="#">Tutorial <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                            <li><a href="#">Website <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                            <li><a href="#">Reference <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                            <li><a href="#">CSS3 <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                            <li><a href="#">HTML5 <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                        </ul>
+<!--        메뉴까지!!           -->
+                        </ul>
+                    </article>
+                    <article class="column col-left2"><h4>왼쪽 컨텐츠2</h4><p>이 곳은 설명 부분입니다.</p></article>
+                    <article class="column col-left3"><h4>왼쪽 컨텐츠3</h4><p>이 곳은 설명 부분입니다.</p></article>
+                </section>
+                <section class="cont-center">
+                    <h3>반응형 사이트 중앙</h3>
+                    <article class="column col-cen1"><h4>중앙 컨텐츠1</h4><p>이 곳은 설명 부분입니다.</p></article>
+                    <article class="column col-cen2"><h4>중앙 컨텐츠2</h4><p>이 곳은 설명 부분입니다.</p></article>
+                    <article class="column col-cen3"><h4>중앙 컨텐츠3</h4><p>이 곳은 설명 부분입니다.</p></article>
+                </section>
+                <section class="cont-right">
+                    <h3>반응형 사이트 오른쪽</h3>
+                    <article class="column col-right1"><h4>오른쪽 컨텐츠1</h4><p>이 곳은 설명 부분입니다.</p></article>
+                    <article class="column col-right2"><h4>오른쪽 컨텐츠2</h4><p>이 곳은 설명 부분입니다.</p></article>
+                    <article class="column col-right3"><h4>오른쪽 컨텐츠3</h4><p>이 곳은 설명 부분입니다.</p></article>
+                </section>
+            </div>
         </section>
     </main>
-    <footer>
-        <h2>반응형 사이트 footer</h2>
+    <footer id="footer">
+        <div class="container">
+            <h2>반응형 사이트 footer</h2>
+        </div>
     </footer>
 </body>
 </html>
