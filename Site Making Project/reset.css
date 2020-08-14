@@ -8,3 +8,9 @@ a:hover {color: #2698cb;}
 /* 폰트 초기화 */
 body, input, textarea, select, button, table {font-family: 'Nanum Gothic', AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif; color: #222; font-size: 13px; line-height: 1.5;}
 li {list-style: none;}
+
+/* margin top */
+.mt15 {margin-top: 15px !important;}
+
+/* 디스플레이 숨기기 */
+.hidden {display: none;}
