@@ -6,10 +6,10 @@
 #sub-title h2{display: none;}
 #contents h2, #contents h3{display: none;}
 #contents .container {position: relative; border: 2px solid #dbdbdb; border-top: none;}
-.cont-left {float: left; width: 250px; height: 1000px;} 
-.cont-center {overflow: hidden; height: 1000px; margin-right: 250px;
+.cont-left {float: left; width: 250px; height: 100%;} 
+.cont-center {overflow: hidden; height: 1280px; margin-right: 250px;
 border: 2px solid #dbdbdb; border-top: none; border-bottom: none;}
-.cont-right {position: absolute; right: 0; top: 0; width: 250px; height: 1000px;} 
+.cont-right {position: absolute; right: 0; top: 0; width: 250px; height: 100%;} 
 
 /* container */
 .container {width: 1200px; height: 100%; margin: 0 auto;}
@@ -107,6 +107,47 @@ transition: all 0.3s ease;}
 .col-left1 .menu li a:hover {box-shadow: inset 180px 0 0 0 rgba(36,130,174,0.7);
 color: #fff; background: rgba(36,130,174,0.9);}
 
+/* 좌측 컨텐츠 - 2.공지 */
+.col-left2 h5 {font-size: 14px; color: #2f7fa6; padding-bottom: 5px;}
+.notice1, .notice2 {position: relative;}
+.notice1 .more, .notice2 .more {position: absolute; right: 0; top: 2px; color: #878787; 
+    text-transform: uppercase; font-size: 12px;}
+.notice1 .more i, .notice2 .more i {margin-left: 3px;}
+.col-left2 .notice1 li {position: relative; padding-left: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.col-left2 .notice1 li:before {position: absolute; left: 0; top: 6px;
+    content: ''; width: 3px; height: 3px; border-radius: 50%; background: #449ce2;}
+.col-left2 .notice2 li {position: relative; padding-left: 8px; overflow: hidden; text-overflow: ellipsis;
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; margin-bottom: 5px;}
+.col-left2 .notice2 li:before {position: absolute; left: 0; top: 6px;
+    content: ''; width: 3px; height: 3px; border-radius: 50%; background: #449ce2;}
+
+/* 좌측 컨텐츠 - 3.블로그 */
+.blog1, .blog2, .blog3 {margin-top: 15px;}
+.col-left3 img {width: 100%;}
+.col-left3 .re-img {display: none;}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 1.5dppx) {
+    .col-left3 .re-img {display: initial;}
+    .col-left3 .no-img {display: none;}
+}
+.col-left3 .blog3 h5 {color: #fff; text-align: center; padding: 30px 30px; text-transform: uppercase;} 
+.col-left3 .blog3 p {padding-top: 5px;}
+.col-left3 .blog3 .retina {
+    background-image: url(../img/blog4_@1.jpg);
+    background-size: cover;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 2dppx) {
+    .col-left3 .blog3 .retina {background-image: url(../img/blog4_@2.jpg);}
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3),
+only screen and (min-device-pixel-ratio: 3),
+only screen and (min-resolution: 3dppx) {
+    .col-left3 .blog3 .retina {background-image: url(../img/blog4_@3.jpg);}
+}
+
 
 
 /* mediaquery */
@@ -126,6 +167,9 @@ color: #fff; background: rgba(36,130,174,0.9);}
     .nav > div ol {margin-bottom: 10px;}
     .nav > div ol li {width: 33.3333%;}
     .nav > div:last-child ol li {width: 33.3333%;}
+    #contents .col-left1 {padding: 0; border-bottom: 0;}
+    #contents .col-left1 h4, #contents .col-left1 p{display: none;}
+
 }
 
 /* width ~768px */
@@ -144,5 +188,12 @@ color: #fff; background: rgba(36,130,174,0.9);}
     .nav > div ol li {width: 100%;}
     .nav > div:last-child ol li {width: 100%;}
     #contents .cont-left {float: none; width: 100%; height: 100%;}
-    .cont-center {height: 100%; border-right: none;}
+    .col-left1 .menu {overflow: hidden;}
+    .col-left1 .menu li {float: left; width: 33.3333%; text-align: center; 
+        border-right: 1px solid #dbdbdb; box-sizing: border-box;}
+    .col-left1 .memu li:nth-child(3n) {border-right: 0; transition: all 0.3s ease;}
+    .col-left1 .menu li a {color: #3192bf; text-shadow: 0 0 5px rgba(0,0,0,0.4);}
+    .col-left1 .menu li a:hover {box-shadow: none; background: rgba(36,130,174,0.3);}
+    .col-left1 .menu li a i {display: none;}
+    .cont-center {height: 100%; border-right: none; border-top: 1px double #aaa;}
 }
