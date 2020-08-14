@@ -24,3 +24,56 @@
       border-right: 5px solid transparent; *
       margin-left: -5px;
   }
+
+- 3단 colume구조 반응성 만들기 (center width 바뀜)
+  #contents .container {position: relative;}
+  * 왼쪽은 float, width값 부여.
+  .cont-left {float: left; width: 250px; height: 1000px; background: red;} 
+  * width 미부여(반응성), 왼쪽 침범은 overflow:hidden / 오른쪽 침범은 margin으로 없앰
+  .cont-center {overflow: hidden; background: blue; height: 1000px; margin-right: 250px; }
+  * 오른쪽은 position:absolute, width값 부여.
+  .cont-right {position: absolute; right: 0; top: 0; width: 250px; height: 1000px; 
+      background: red;}
+
+- CSS !important : 우선순위 영향없이 absolute 적용
+
+- 한줄효과: li {overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+- 두줄효과: li {overflow: hidden; text-overflow: ellipsis;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;}
+  * -webkit: 벤딩 프리픽스(크롬,사파리) -> 호환성(CSS Crossing Browser)
+
+- 그림 semantic tag : <figure><img src="~"></figure>
+  * <figcaption>설명~</figcaption>
+
+- 고해상도 이미지 선택
+  * 다음 트로이: device별 pixel-ratio 사이트
+  1) @mediaquery 조건부(pixel-ratio: 1.5) - 호환성 높음
+    * .col-left3 .re-img {display: none;}   <평소 고해상도 none>
+      @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+      only screen and (min-device-pixel-ratio: 1.5),
+      only screen and (min-resolution: 1.5dppx) {
+          .col-left3 .re-img {display: initial;}    <고해상도 initial>
+          .col-left3 .no-img {display: none;}       <저해상도 none>
+      }
+
+  2) img srcset="[이미지소스] [조건]" - HTML 5.1 신기술
+    * <img srcset="img/blog2_@1.jpg 1x, img/blog2_@2.jpg 2x" alt="alternative-img">
+
+  3) @mediaquery + background 이용 - 호환성 높음, HTML 깔끔해짐(Best now!)
+    * .blog3 .retina {
+    background-image: url(../img/blog4_@1.jpg);
+    background-size: cover;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 2dppx) {
+        .blog3 .retina {background-image: url(../img/blog4_@2.jpg);}
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 3),
+    only screen and (min-device-pixel-ratio: 3),
+    only screen and (min-resolution: 3dppx) {
+        .blog3 .retina {background-image: url(../img/blog4_@3.jpg);}
+    }
+
+- 이미지 슬라이드(slick.js)
+  * kenwheeler.github.io/slick/ : slick.js source 사이트 -> usage(셋팅방법)
