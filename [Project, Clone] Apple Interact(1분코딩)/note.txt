@@ -1,0 +1,26 @@
+[스크롤 인터렉션]
+- sticky-elem
+  1) position:fixed; - 위치고정(IE11 지원)
+    * position:sticky; - 스크롤 내려가다 일정 위치되면 고정(IE11 지원되지 않음)
+
+  2) body에 #show-scene-0~3 스크립트 -> 해당 번호에서 #scr0~3 display!
+
+  3) sceneInfo 배열 선언[]
+    -> 내부요소는 Object{
+        type: "sticky" || "normal", 
+        heightMultiple: 5,      //디바이스 높이 5배
+        scrollHeight: 0,        //스크롤 출발점
+        objs: {                 //HTML 받아오는 객체요소
+            container: document.queryselector('scr0'),
+            },
+        }
+        
+  4) setLayout 함수로 스크롤 섹션 크기 지정
+    function setLayout() {
+        // 각 스크롤 섹션의 높이 셋팅
+        for (let i=0; i < sceneInfo.length; i++) {
+            sceneInfo[i].scrollHeight = sceneInfo[i].heightMultiple * window.innerHeight;   //배수 * innerHeight(브라우저 높이)
+            sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;    //각 섹션 높이를 ${scrollHeight}px 만큼(크기증가, 스크롤바 작아짐)
+        }
+        window.addEventListener('resize', setLayout);   //창 조정시, 스크롤 섹션 높이 재계산
+    }
