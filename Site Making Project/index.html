@@ -1,119 +1,105 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <!-- 문서세팅 표준 -->
     <meta charset="UTF-8">
-    <meta name="author" content="webstoryboy">
-    <meta name="description" content="반응형 사이트 따라하기">
-    <meta name="keywords" content="반응형사이트, 웹퍼블리셔, 웹접근성, HTML5, webstoryboy, webs">
-    <title>반응형 사이트 만들기</title>
-    <!-- style -->
-    <link rel="stylesheet" href="css/reset.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/font-awesome.css">
-    <!-- Facebook meta tags -->
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="반응형 사이트 만들기(title)" />
-    <meta property="og:url" content="http://richclub8.dothome.co.kr/responsive/html5/index.html" />
-    <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
-    <meta property="og:site_name" content="반응형 사이트 만들기(site_name)" />
-    <meta property="og:description" content="반응형 사이트 따라하기(description)" />
-    <!-- twitter meta tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@webstoryboy" />
-    <meta name="twitter:title" content="반응형 사이트 만들기(title)" />
-    <meta name="twitter:description" content="반응형 사이트 만들기(description)." />
-    <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
-    <!-- 파비콘 -->
-    <link rel="shortcut icon" href="icon/favicon-152.png">
-    <link rel="apple-touch-icon-precomposed" href="icon/favicon-152.png">
-    <link rel="icon" href="path/to/favicon-64.png">
-    <link rel="icon" href="icon/favicon-16.png" sizes="16x16"> 
-    <link rel="icon" href="icon/favicon-32.png" sizes="32x32"> 
-    <link rel="icon" href="icon/favicon-48.png" sizes="48x48"> 
-    <link rel="icon" href="icon/favicon-64.png" sizes="64x64"> 
-    <link rel="icon" href="icon/favicon-128.png" sizes="128x128">
-    <!-- 폰트 -->
-    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
-        <!-- HTLM5shiv ie6~8 -->
-    <!--[if lt IE 9]> 
-        <script src="js/html5shiv.min.js"></script>
-        <script type="text/javascript">
-            alert("현재 당신이 보는 브라우저는 지원하지 않습니다. 최신 브라우저로 업데이트해주세요!");
-        </script>
-    <![endif]-->
+    <title>Apple Interactive</title>
 </head>
-<body>  
-    <!-- JavaScript Libraries -->
-    <script src="js/jquery.min_1.12.4.js"></script>
-    <script src="js/modernizr-custom.js"></script>
-    <script>
-        //http://www.facebook.com/sharer.php?u={페이지 제목}&t={페이지링크}
-        //http://twitter.com/intent/tweet?text={페이지 제목}&url={페이지링크}
-        //https://share.naver.com/web/shareView.nhn?url={페이지링크}&title={페이지 제목}
-        //https://plus.google.com/share?url={페이지링크}&t={페이지 제목}
-        $(".facebook").click(function(e){
-            e.preventDefault();
-            window.open('https://www.facebook.com/sharer/sharer.php?u=' +encodeURIComponent(document.URL)+'&t='+encodeURIComponent(document.title), 'facebooksharedialog', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=300, width=600'); 
-        });
-        $(".twitter").click(function(e){
-            e.preventDefault();
-            window.open('https://twitter.com/intent/tweet?text=[%EA%B3%B5%EC%9C%A0]%20' +encodeURIComponent(document.URL)+'%20-%20'+encodeURIComponent(document.title), 'twittersharedialog', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=300, width=600');
-        });
-    </script>
-    <header class="header">
-        <h1>반응형 사이트</h1>
-        <div class="container">
-            <div class="row">
-                <div class="header_menu">
-                    <a href="">Blog</a>
-                    <a href="">Github</a>
-                    <a href="">Webstandard</a>
-                </div>
-                <div class="header_title">
-                    <h1>Professional Web Publisher</h1><br>
-                    <a href="http://webstoryboy.co.kr">webstoryboy.co.kr</a>
-                </div>
-                <div class="header_icon">
-                    <ul>
-                        <li><a href="#"><i class="fa fa-html5" aria-hidden="true"></i><span>HTML5</span></a></li>
-                        <li><a href="#"><i class="fa fa-github" aria-hidden="true"></i><span>Github</span></a></li>
-                        <li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a></li>
-                        <li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></a></li>
-                    </ul>
-                </div>
+<body class="before-load">
+    <!-- 로딩시 svg 애니메이션 -->
+    <div class="loading">
+        <svg class="loading-circle" viewbox="0 0 54 54">
+            <circle cx="50%" cy="50%" r="25"></circle>
+        </svg>
+    </div>
+    <div class="container">
+        <nav class="glo-nav">
+            <div class="glo-nav-link">
+                <a href="#" class="glo-nav-items">Rooms</a>
+                <a href="#" class="glo-nav-items">Ideas</a>
+                <a href="#" class="glo-nav-items">Stores</a>
+                <a href="#" class="glo-nav-items">Contact</a>
             </div>
-        </div>
-    </header>
-    <nav>
-        <h2>반응형 사이트 전체 메뉴</h2>
-    </nav>
-    <article>
-        <h2>반응형 사이트 서브타이틀</h2>
-    </article>
-    <main>
-        <h2>반응형 사이트 컨텐츠</h2>
-        <section>
-            <h3>반응형 사이트 왼쪽</h3>
-            <article><h4>왼쪽 컨텐츠1</h4></article>
-            <article><h4>왼쪽 컨텐츠2</h4></article>
-            <article><h4>왼쪽 컨텐츠3</h4></article>
+        </nav>
+        <nav class="loc-nav">
+            <div class="loc-nav-link">
+                <a href="#" class="product-name">Airmug Pro</a>
+                <a href="#">개요</a>
+                <a href="#">제품사양</a>
+                <a href="#">구입하기</a>
+            </div>
+        </nav>
+        <section class="scroll-section" id="scr0">
+            <h1>Airmug Pro</h1>
+            <div class="sticky-elem sticky-elem-canvas">
+                <canvas id="video-canvas-0" width="1920" height="1080"></canvas>
+            </div>
+            <div class="sticky-elem main-message a">
+                <p>온전히 빠져들게 하는<br>최고급 세라믹</p>
+            </div>
+            <div class="sticky-elem main-message b">
+                <p>주변 맛을 느끼게 해주는<br>주변 맛 허용모드</p>
+            </div>
+            <div class="sticky-elem main-message c">
+                <p>온종일 편안한<br>맞춤형 손잡이</p>
+            </div>
+            <div class="sticky-elem main-message d">
+                <p>새롭게 입가를<br>찾아온 매혹</p>
+            </div>
         </section>
-        <section>
-            <h3>반응형 사이트 중앙</h3>
-            <article><h4>중앙 컨텐츠1</h4></article>
-            <article><h4>중앙 컨텐츠2</h4></article>
-            <article><h4>중앙 컨텐츠3</h4></article>
+        <section class="scroll-section" id="scr1">
+            <p class="description">
+                <strong>보통 스크롤 영역</strong>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut iusto dolore, tenetur maxime eligendi at expedita perspiciatis eum sit facilis mollitia dignissimos aspernatur autem molestias sunt ex quis animi illum corrupti assumenda optio. Praesentium animi maxime natus ratione distinctio magni perferendis harum voluptas? Aut autem magnam sunt ab asperiores beatae quisquam amet! Repudiandae, sit provident velit unde debitis ab saepe quaerat amet expedita alias minus recusandae molestias rem facere quam laborum facilis doloribus eos aut perferendis deserunt animi sed earum. Vel nemo fuga, facere repellat necessitatibus, quasi quae voluptates consequatur voluptatibus reprehenderit exercitationem iste corrupti? Est repellendus harum doloribus voluptatibus consequatur cumque asperiores, animi assumenda nobis ipsam temporibus at odio, earum ea dolorum reprehenderit dicta fugiat, itaque necessitatibus deserunt debitis officiis aliquid. Voluptatum earum libero exercitationem saepe. Ex, at repellat in assumenda corporis vero id, quod ducimus labore quibusdam sequi? Enim eum aspernatur adipisci hic facilis corporis, cum aperiam. Voluptate quos aut distinctio maxime autem, excepturi maiores minus aperiam voluptates modi ex, mollitia natus amet? Tenetur reprehenderit nostrum eaque, beatae delectus, numquam omnis laudantium rerum magni quaerat earum ratione quasi provident nesciunt, rem odit deserunt porro placeat quod pariatur? Iusto, vel mollitia. Dolorum quas tenetur quia numquam nisi fuga atque!
+            </p>
         </section>
-        <section>
-            <h3>반응형 사이트 오른쪽</h3>
-            <article><h4>오른쪽 컨텐츠1</h4></article>
-            <article><h4>오른쪽 컨텐츠2</h4></article>
-            <article><h4>오른쪽 컨텐츠3</h4></article>
+        <section class="scroll-section" id="scr2">
+            <div class="sticky-elem sticky-elem-canvas">
+                <canvas id="video-canvas-2" width="1920" height="1080"></canvas>
+            </div>
+            <div class="sticky-elem main-message a">
+                <p>
+                    <small>편안한 촉감</small>
+                    입과 하나 되다
+                </p>
+            </div>
+            <div class="sticky-elem desc-message b">
+                <p>편안한 목넘김을 완성하는 디테일한 여러 구성 요소들, 우리는 이를 하나하나 새롭게 살피고 재구성하는 과정을 거칩니다.</p>
+                <div class="pin"></div>
+            </div>
+            <div class="sticky-elem desc-message c">
+                <p>디자인 앤 퀄리티 오브 스웨덴,<br>메이드 인 차이나</p>
+                <div class="pin"></div>
+            </div>
         </section>
-    </main>
-    <footer>
-        <h2>반응형 사이트 footer</h2>
-    </footer>
+        <section class="scroll-section" id="scr3">
+            <p class="mid-message">
+                <strong>Retina 머그</strong><br>
+                아이디어를 광활하게 펼칠<br>
+                아름답고 부드러운 음료 공간.
+            </p>
+            <canvas class="image-blend-canvas" width="1920" height="1080"></canvas>
+            <p class="canvas-caption">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam cupiditate labore quia laudantium quae esse consequatur reprehenderit repellat doloribus ipsam praesentium excepturi, consectetur provident eum blanditiis reiciendis nemo sapiente explicabo veniam sint alias. Quaerat inventore laboriosam officiis, porro atque illum aperiam aut saepe, repudiandae, autem necessitatibus non error quae dolor vero quo natus nesciunt culpa delectus explicabo ratione totam suscipit! Veniam recusandae, excepturi exercitationem obcaecati repellat dolor facilis minus atque corporis ullam aliquam molestias ducimus ratione. Et obcaecati fuga quis unde voluptates maxime ratione modi corporis incidunt quos asperiores repellat dolorum, voluptas placeat quod dolorem nulla quia amet? Exercitationem, perspiciatis?
+            </p>
+        </section>
+        <section class="add-content">
+            <p class="mid-message">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima itaque provident esse tempora aut eos praesentium error! In nobis odio ipsum commodi eligendi reprehenderit possimus deserunt qui tempore esse. Quae dolor recusandae tenetur delectus laudantium iure corporis veritatis praesentium nostrum quisquam, ullam et placeat possimus vitae saepe culpa dolorum. Consequuntur explicabo, eveniet sequi dicta totam natus deserunt assumenda fuga unde? Omnis aut quo consequatur ratione, nulla quos earum molestiae, nisi nobis nostrum incidunt. Dolorum libero delectus deleniti, doloremque alias vitae nihil? Odio nihil aut, vitae in fugit voluptas recusandae laudantium, ratione expedita porro voluptate perferendis, et sapiente consectetur libero. Dicta.
+            </p>
+            <p class="mid-message">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima itaque provident esse tempora aut eos praesentium error! In nobis odio ipsum commodi eligendi reprehenderit possimus deserunt qui tempore esse. Quae dolor recusandae tenetur delectus laudantium iure corporis veritatis praesentium nostrum quisquam, ullam et placeat possimus vitae saepe culpa dolorum. Consequuntur explicabo, eveniet sequi dicta totam natus deserunt assumenda fuga unde? Omnis aut quo consequatur ratione, nulla quos earum molestiae, nisi nobis nostrum incidunt. Dolorum libero delectus deleniti, doloremque alias vitae nihil? Odio nihil aut, vitae in fugit voluptas recusandae laudantium, ratione expedita porro voluptate perferendis, et sapiente consectetur libero. Dicta.
+            </p>
+        </section>
+        <footer class="footer">2020, 1분코딩</footer>
+    </div>
+    <script src="js/main.js"></script>
 </body>
 </html>
