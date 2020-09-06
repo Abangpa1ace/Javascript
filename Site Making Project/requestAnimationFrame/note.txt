@@ -1,0 +1,54 @@
+[requestAnimationFrame]
+
+- window.requestAnimationFrame(); : 애니메이션 최적화(부드럽게)
+  * 전에는 setInterval() 사용 -> frame 유실, 모바일기기 배터리 많이 들어감
+
+
+[부드럽게 감속하기]
+
+- window.addEventListner('scroll', () => {
+  box.style.width = `${window.pageYOffset}px`
+})
+// [구] 방향키 스크롤 시, 딜레이 걸림
+
+  function loop() {
+    delayYOffset = delayYOffset + (pageYOffset-delayYOffset) * 0.1;
+    box.style.width = `${delayYOffset}px`;
+
+    rafId = requestAnimationFrame(loop);    -> loop 취소담당
+    if (pageYOffset - delayYOffset < 1) {
+      cancelAnimationFrame(rafId);
+      rafState = false;
+    }
+  }
+// [신] requestAnimationFrame으로 loop 반복. YOffset을 남은 런타임의 0.1배씩 진행시키며 딜레이 완화.
+
+
+[SVG 애니메이션]   * 로딩 원 만드는 방법(CSS보다 애니메이션 용이)
+- svg태그 -> circle태그(cx=x좌표, cy=y좌표, r=반지름)
+  * viewbox = "x좌표 y좌표 width height"  : 기준크기
+- svg크기설정(CSS)
+  * stroke : 테두리 -> stroke-dasharray: 점선주기, stroke-dashoffset: 점선주기 변형
+  * fill: 채우기
+- svg 애니메이션(CSS keyframes)
+  * @keyframes loading-circle-ani(애니명) {
+    0% {stroke-dashoffset: 157;}
+    75% {stroke-dashoffset: -147;}
+    100% {stroke-dashoffset: -157;}
+  }
+- loading 시, opacity 0으로 변경 
+  -> 클릭 등 안됨 : transitionend 이벤트 후, removeChild('.loading')
+    * (e) => {removeChild(e.currentTarget)} : 최근 타겟요소(.loading)를 삭제
+    * 바로 removeChild를 쓰면, 반응성 없음(transition)
+
+
+[will-change] : transition을 브라우저에 미리 알림
+- will-change: transform, opacity
+  * 브라우저 속도를 저하시키므로, 남발하면 안됨!
+
+
+[버그 수정]
+1) #scr1이 setLayout() 계산되기 전에 display => .before-load .container {display: none}
+2) 새로고침 시 스크롤 없으면 흰색 화면 => setInterval(() => {window.scrollTo(0, tempYoffset);})
+  * setTimeout(() => {실행문}, 시간) : 일정시간동안 반복
+  * setInterval(() => {실행문}, 주기) : 주기간격으로 반복 -> count++과 clearInterval(siID)로 종료.
